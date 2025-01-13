@@ -17,14 +17,16 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/view/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/welcomeScreen.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Muse Group");
-        primaryStage.resizableProperty().setValue(true);
+        primaryStage.resizableProperty().setValue(false);
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        primaryStage.setWidth(screenBounds.getWidth());
-        primaryStage.setHeight(screenBounds.getHeight());
+        //primaryStage.setWidth(screenBounds.getWidth());
+        //primaryStage.setHeight(screenBounds.getHeight());
+        primaryStage.setWidth(1200);
+        primaryStage.setHeight(800);
         Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.show();

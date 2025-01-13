@@ -17,7 +17,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/view/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/loginPage.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Muse Group");
@@ -28,5 +28,6 @@ public class AppInitializer extends Application {
         Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.show();
+
     }
 }

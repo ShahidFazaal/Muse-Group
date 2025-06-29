@@ -17,8 +17,10 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -90,5 +92,24 @@ public class WelcomeScreen {
 
     public void onMouseClick(MouseEvent mouseEvent) {
         Platform.exit();
+    }
+
+    public void navigateToUserCredential(MouseEvent mouseEvent) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/MuseGroupDashboard.fxml"));
+        Scene mainScene = new Scene(root);
+        primaryStage.setScene(mainScene);
+        primaryStage.setTitle("Muse Group");
+        primaryStage.resizableProperty().setValue(true);
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        primaryStage.setMaximized(true);
+//        primaryStage.setWidth(screenBounds.getWidth());
+//        primaryStage.setHeight(screenBounds.getHeight());
+////        primaryStage.setWidth(1200);
+////        primaryStage.setHeight(800);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
+        primaryStage.getIcons().add(icon);
+        primaryStage.show();
     }
 }

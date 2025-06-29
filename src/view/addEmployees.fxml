@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="addEmployee" prefHeight="561.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddEmployees">
+   <children>
+      <Label layoutX="18.0" layoutY="22.0" text="Employee ID" />
+      <TextField fx:id="txtEmpID" layoutX="117.0" layoutY="18.0" prefHeight="26.0" prefWidth="118.0" />
+      <Label layoutX="20.0" layoutY="90.0" text="Branch" />
+      <Label layoutX="19.0" layoutY="123.0" text="Department" />
+      <Label layoutX="19.0" layoutY="158.0" text="First Name" />
+      <TextField fx:id="txtFName" layoutX="118.0" layoutY="154.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="19.0" layoutY="195.0" text="Last Name" />
+      <TextField fx:id="txtLName" layoutX="118.0" layoutY="191.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="19.0" layoutY="230.0" text="Gender" />
+      <Label layoutX="19.0" layoutY="270.0" text="Date Of Birth" />
+      <Label layoutX="19.0" layoutY="307.0" text="Email" />
+      <TextField fx:id="txtEmail" layoutX="118.0" layoutY="303.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="19.0" layoutY="342.0" text="Phone" />
+      <TextField fx:id="txtMobile" layoutX="118.0" layoutY="338.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label fx:id="txtVisaNo" layoutX="586.0" layoutY="38.0" text="Visa Number" />
+      <TextField layoutX="672.0" layoutY="34.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="586.0" layoutY="75.0" text="Posission" />
+      <Label layoutX="586.0" layoutY="110.0" text="Salary" />
+      <TextField fx:id="txtSalary" layoutX="672.0" layoutY="106.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="19.0" layoutY="380.0" text="Date of Joining" />
+      <Label layoutX="20.0" layoutY="415.0" text="Visa Status" />
+      <CheckBox layoutX="511.0" layoutY="182.0" mnemonicParsing="false" text="Phorest Access" />
+      <CheckBox layoutX="634.0" layoutY="182.0" mnemonicParsing="false" text="Zoho Access" />
+      <CheckBox layoutX="750.0" layoutY="182.0" mnemonicParsing="false" text="Email" />
+      <CheckBox layoutX="510.0" layoutY="216.0" mnemonicParsing="false" text="Biomatric Registration" />
+      <CheckBox layoutX="664.0" layoutY="216.0" mnemonicParsing="false" text="Sim Card" />
+      <CheckBox layoutX="745.0" layoutY="216.0" mnemonicParsing="false" text="Mobile Phone" />
+      <CheckBox layoutX="826.0" layoutY="182.0" mnemonicParsing="false" text="Laptop" />
+      <CheckBox layoutX="856.0" layoutY="216.0" mnemonicParsing="false" text="Laptop Bag" />
+      <TextArea fx:id="txtOther" layoutX="712.0" layoutY="335.0" prefHeight="90.0" prefWidth="203.0" promptText="Other" />
+      <Button fx:id="btnSubmit" layoutX="764.0" layoutY="495.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Submit" />
+      <Button fx:id="btnUpdate" layoutX="587.0" layoutY="495.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Update" />
+      <Button fx:id="btnStatus" layoutX="401.0" layoutY="495.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Update &amp; View Status" />
+      <Button fx:id="btnViewEmployees" layoutX="234.0" layoutY="495.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="View Employees" />
+      <Label layoutX="18.0" layoutY="55.0" text="Company" />
+      <ComboBox fx:id="cmbCompany" layoutX="116.0" layoutY="51.0" prefHeight="26.0" prefWidth="358.0" promptText="SELECT THE COMPANY" />
+      <ComboBox fx:id="cmbBranch" layoutX="116.0" layoutY="86.0" prefHeight="26.0" prefWidth="256.0" promptText="SELECT THE BRANCH" />
+      <ComboBox fx:id="cmbDepartment" layoutX="117.0" layoutY="119.0" prefHeight="26.0" prefWidth="256.0" promptText="DEPARTMENT" />
+      <ComboBox fx:id="cmbGender" layoutX="117.0" layoutY="225.0" prefHeight="26.0" prefWidth="256.0" promptText="Pleae Select the Gender" />
+      <DatePicker fx:id="dateOfBirth" layoutX="116.0" layoutY="267.0" prefHeight="26.0" prefWidth="256.0" />
+      <DatePicker fx:id="dateOfJoining" layoutX="118.0" layoutY="376.0" prefHeight="26.0" prefWidth="256.0" />
+      <ComboBox fx:id="cmbVisaStatus" layoutX="117.0" layoutY="411.0" prefHeight="26.0" prefWidth="256.0" promptText="VISA STATUS" />
+      <ComboBox fx:id="cmbPosition" layoutX="671.0" layoutY="71.0" prefHeight="26.0" prefWidth="256.0" promptText="POSSISION" />
+      <Button fx:id="btnNewEmployee" layoutX="72.0" layoutY="495.0" mnemonicParsing="false" onMouseClicked="#btnNewEmployee_OnMouseClick" prefHeight="26.0" prefWidth="150.0" text="New Employee" />
+   </children>
+</AnchorPane>

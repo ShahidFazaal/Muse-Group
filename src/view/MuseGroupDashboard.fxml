@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="MuseGroupDashboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="818.0" prefWidth="1111.0" stylesheets="@styles/musegroupDashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MuseGroupDashboard">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <BorderPane layoutX="45.0" layoutY="75.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <BorderPane layoutX="45.0" layoutY="75.0" prefHeight="747.2" prefWidth="1111.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <AnchorPane prefHeight="37.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="49.0" prefWidth="1111.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutY="-77.0" prefHeight="35.0" prefWidth="1100.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutY="-77.0" prefHeight="58.0" prefWidth="1111.0" AnchorPane.bottomAnchor="-20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label layoutX="22.0" layoutY="11.0" text="HR MANAGEMENT SYSTEM">
+                              <Label layoutX="40.0" layoutY="17.0" text="HR MANAGEMENT SYSTEM">
                                  <font>
-                                    <Font name="System Bold" size="12.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="1033.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" AnchorPane.rightAnchor="2.0">
+                              <Button fx:id="btnExit" layoutX="1052.8" layoutY="15.0" mnemonicParsing="false" onAction="#btnMinimizeAndClose_OnAction" prefHeight="26.0" prefWidth="56.0" AnchorPane.rightAnchor="2.400000000000091">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="CLOSE" />
                                  </graphic>
                               </Button>
-                              <Button layoutX="977.8" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" AnchorPane.rightAnchor="66.20000000000005">
+                              <Button fx:id="btnMinimize" layoutX="988.8" layoutY="15.0" mnemonicParsing="false" onAction="#btnMinimizeAndClose_OnAction" prefHeight="26.0" prefWidth="56.0" AnchorPane.rightAnchor="66.40000000000009">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="MINUS" />
                                  </graphic>
@@ -41,85 +49,211 @@
                   </AnchorPane>
                </top>
                <left>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="590.0" prefWidth="277.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutY="127.0" prefHeight="554.4" prefWidth="200.0" style="-fx-background-color: #353A56;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutY="127.0" prefHeight="554.4" prefWidth="239.0" style="-fx-background-color: #353A56;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <ImageView fitHeight="120.0" fitWidth="143.0" layoutX="20.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                              <VBox alignment="TOP_CENTER" layoutX="7.0" layoutY="185.0" prefHeight="200.0" prefWidth="265.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="230.0">
+                                 <children>
+                                    <Button fx:id="btnSettings" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="    SETTINGS" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="COG" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnEmployees" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="   EMPLOYEES" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnPayroll" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="   PAYROLL" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnLeave" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="   LEAVE REQUESTS" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnTraining" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text=" TRAINING" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="STAR" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnJobs" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="   JOBS" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnVisa" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="   VISA" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="btnLogs" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#SwithForm" prefHeight="35.0" prefWidth="238.0" styleClass="custom-button" text="  LOGS" textFill="WHITE">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="LOG" size="25" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <Button layoutX="53.0" layoutY="644.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="138.0" styleClass="logoutButton" text="LOGOUT" textFill="#fcfcfc" AnchorPane.bottomAnchor="25.0">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resource/icons8-logout-64.png" />
+                                       </image>
+                                       <styleClass>
+                                          <String fx:value="clicked" />
+                                          <String fx:value="custom-button" />
+                                       </styleClass>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../resource/WhatsApp%20Image%202024-09-12%20at%2013.06.22_86c5c245.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="44.0" layoutY="109.0" text="THE MUSE GROUP" textFill="WHITE" />
-                              <Button layoutX="13.0" layoutY="168.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="SETTINGS" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="COG" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="11.0" layoutY="210.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="EMPLOYEES" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="253.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="PAYROLL" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="13.0" layoutY="301.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="LEAVE REQUESTS" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="11.0" layoutY="351.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="TRAINING &amp; PERFORMANCE" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="STAR" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="13.0" layoutY="398.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="JOBS" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="13.0" layoutY="443.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="VISA" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="12.0" layoutY="485.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="LOGS" textFill="WHITE">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="LOG" size="25" />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="23.0" prefHeight="709.6" prefWidth="833.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="apSetting" layoutX="67.0" layoutY="106.0" prefHeight="709.6" prefWidth="833.6" style="-fx-background-color: black;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="217.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resource/WhatsApp%20Image%202024-09-12%20at%2013.06.22_c4c98955.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="apEmployees" prefHeight="709.6" prefWidth="833.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" layoutX="136.0" layoutY="72.0" prefHeight="100.0" prefWidth="519.0" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="179.19999999999993">
+                                       <children>
+                                          <Button fx:id="btnNewEmployee" mnemonicParsing="false" onMouseClicked="#btnNewEmployee_OnMouseClick" prefHeight="100.0" prefWidth="137.0" text="New Employee">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Warning Letter">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Offer Letter">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Salary Certificate">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="142.0" layoutY="190.0" prefHeight="100.0" prefWidth="462.0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="173.19999999999993">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Issue Memmo">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Termination">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="137.0" text="Reports">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="tbleEmployees" layoutY="459.0" prefHeight="310.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.20000000000004547" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="458.4">
+                                      <columns>
+                                        <TableColumn maxWidth="1.7976931348623157E308" prefWidth="150.0" sortable="false" text="Emp ID" />
+                                        <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="First Name" />
+                                          <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="Department" />
+                                          <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="Email" />
+                                          <TableColumn maxWidth="300.0" minWidth="0.0" prefWidth="150.0" sortable="false" text="Phone" />
+                                          <TableColumn maxWidth="300.0" minWidth="150.0" prefWidth="65.60003662109375" sortable="false" text="Visa Status" />
+                                          <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="Job" />
+                                          <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="Salary" />
+                                          <TableColumn maxWidth="300.0" prefWidth="150.0" sortable="false" text="Join Date" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="btnSearch" layoutX="439.0" layoutY="428.0" mnemonicParsing="false" text="Search" />
+                                    <ComboBox fx:id="cmbResidency" layoutX="127.0" layoutY="428.0" prefWidth="150.0" />
+                                    <ComboBox fx:id="cmbLetterType" layoutX="283.0" layoutY="428.0" prefWidth="150.0" />
+                                    <TextField fx:id="txtEmployeeID" layoutX="2.0" layoutY="428.0" prefHeight="26.0" prefWidth="121.0" promptText="Employee Number" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
             </BorderPane>
          </children>
       </AnchorPane>

@@ -7,44 +7,46 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
-   <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<HBox fx:id="log" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
+   <children>
+      <AnchorPane prefHeight="580.0" prefWidth="719.0" style="-fx-background-color: black;" HBox.hgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="262.0" fitWidth="244.0" layoutX="8.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resource/themuse.jpg" />
-               </image>
-            </ImageView>
+            <HBox alignment="CENTER" layoutX="54.0" layoutY="273.0" prefHeight="499.0" prefWidth="854.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="273.0">
+               <children>
+                  <AnchorPane prefHeight="499.0" prefWidth="1086.0">
+                     <children>
+                        <ImageView fitHeight="204.0" fitWidth="222.0" layoutX="492.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/themuse.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="57.0" fitWidth="57.0" layoutX="696.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resource/lock.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="412.0" layoutY="158.0" text="Username" textFill="#ffc900">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="415.0" layoutY="196.0" text="Password" textFill="#ffc900">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUserName" layoutX="527.0" layoutY="164.0" promptText="Username" />
+                        <PasswordField fx:id="txtPassword" layoutX="527.0" layoutY="199.0" promptText="Password" />
+                        <Label fx:id="wrong" textFill="RED" />
+                        <Button fx:id="btnLogin" layoutX="571.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnLogin_OnMouseClick" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #ffc900;" text="Login" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="400.0" prefWidth="336.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="57.0" fitWidth="57.0" layoutX="140.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resource/lock.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="31.0" layoutY="172.0" text="Username" textFill="#ffc900">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="32.0" layoutY="221.0" text="Password" textFill="#ffc900">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtUserName" layoutX="154.0" layoutY="176.0" promptText="Username" />
-            <PasswordField fx:id="txtPassword" layoutX="154.0" layoutY="228.0" promptText="Password" />
-            <Button fx:id="btnLogin" layoutX="142.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#btnLogin_OnMouseClick" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #ffc900;" text="Login" />
-            <Label fx:id="wrong" layoutX="154.0" layoutY="140.0" textFill="RED" />
-         </children>
-      </AnchorPane>
-   </right>
-</BorderPane>
+   </children>
+</HBox>

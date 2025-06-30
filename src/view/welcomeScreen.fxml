@@ -58,7 +58,7 @@
                         <Image url="@../resource/WhatsApp%20Image%202024-09-12%20at%2013.06.22_c4c98955.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgMuse" fitHeight="291.0" fitWidth="389.0" onMouseEntered="#mouseEnteredAnimation" onMouseExited="#mouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMuse" fitHeight="291.0" fitWidth="389.0" onMouseClicked="#navigateToUserCredential" onMouseEntered="#mouseEnteredAnimation" onMouseExited="#mouseExitAnimation" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resource/WhatsApp%20Image%202024-09-12%20at%2013.06.22_f620e1ee.jpg" />
                      </image>

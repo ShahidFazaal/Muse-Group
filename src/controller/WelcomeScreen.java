@@ -96,18 +96,18 @@ public class WelcomeScreen {
 
     public void navigateToUserCredential(MouseEvent mouseEvent) throws IOException {
         Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(this.getClass().getResource("/view/MuseGroupDashboard.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/LoginPage.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Muse Group");
-        primaryStage.resizableProperty().setValue(true);
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        primaryStage.setMaximized(true);
+
+
+
 //        primaryStage.setWidth(screenBounds.getWidth());
 //        primaryStage.setHeight(screenBounds.getHeight());
 ////        primaryStage.setWidth(1200);
 ////        primaryStage.setHeight(800);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+
         Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.show();

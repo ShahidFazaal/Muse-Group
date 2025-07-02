@@ -18,6 +18,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         Parent root = FXMLLoader.load(this.getClass().getResource("/view/welcomeScreen.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
@@ -33,5 +34,6 @@ public class AppInitializer extends Application {
         Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.show();
+
     }
 }

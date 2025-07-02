@@ -80,6 +80,7 @@ public class AddEmployees {
                     preparedStatement1.setObject(1,companyId);
                     ResultSet resultSet1 = preparedStatement1.executeQuery();
                     ObservableList items = cmbBranch.getItems();
+                    items.clear();
                     while (resultSet1.next()){
                         items.add(resultSet1.getString(3));
                     }

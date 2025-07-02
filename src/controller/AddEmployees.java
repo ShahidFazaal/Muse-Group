@@ -48,6 +48,15 @@ public class AddEmployees {
         gender.add("Male");
         gender.add("Female");
 
+        //ADD Visa Status to comboBox
+
+        ObservableList visaStatus = cmbVisaStatus.getItems();
+        visaStatus.add("Visit Visa");
+        visaStatus.add("Employment Visa From Different Company");
+        visaStatus.add("Employment Visa From Our Company");
+        visaStatus.add("No Visa");
+
+
         // Fetch company names from the database and add it in the combo box
 
         ObservableList<Companies> companies = cmbCompany.getItems();
@@ -76,10 +85,12 @@ public class AddEmployees {
                 Companies selectedItem = cmbCompany.getSelectionModel().getSelectedItem();
                 String companyId = newValue.getCompanyId();
                 try {
+
                     PreparedStatement preparedStatement1 = DBConnection.getInstance().getConnection().prepareStatement("Select * from branches where company_id = ?");
                     preparedStatement1.setObject(1,companyId);
                     ResultSet resultSet1 = preparedStatement1.executeQuery();
                     ObservableList items = cmbBranch.getItems();
+                    items.clear();
                     while (resultSet1.next()){
                         items.add(resultSet1.getString(3));
                     }

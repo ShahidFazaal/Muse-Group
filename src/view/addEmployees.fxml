@@ -27,9 +27,8 @@
       <TextField fx:id="txtMobile" layoutX="118.0" layoutY="338.0" prefHeight="26.0" prefWidth="256.0" />
       <Label fx:id="txtVisaNo" layoutX="586.0" layoutY="38.0" text="Visa Number" />
       <TextField layoutX="672.0" layoutY="34.0" prefHeight="26.0" prefWidth="256.0" />
-      <Label layoutX="586.0" layoutY="75.0" text="Posission" />
-      <Label layoutX="586.0" layoutY="110.0" text="Salary" />
-      <TextField fx:id="txtSalary" layoutX="672.0" layoutY="106.0" prefHeight="26.0" prefWidth="256.0" />
+      <Label layoutX="586.0" layoutY="74.0" text="Salary" />
+      <TextField fx:id="txtSalary" layoutX="672.0" layoutY="70.0" prefHeight="26.0" prefWidth="256.0" />
       <Label layoutX="19.0" layoutY="380.0" text="Date of Joining" />
       <Label layoutX="20.0" layoutY="415.0" text="Visa Status" />
       <CheckBox layoutX="511.0" layoutY="182.0" mnemonicParsing="false" text="Phorest Access" />
@@ -53,7 +52,6 @@
       <DatePicker fx:id="dateOfBirth" layoutX="116.0" layoutY="267.0" prefHeight="26.0" prefWidth="256.0" />
       <DatePicker fx:id="dateOfJoining" layoutX="118.0" layoutY="376.0" prefHeight="26.0" prefWidth="256.0" />
       <ComboBox fx:id="cmbVisaStatus" layoutX="117.0" layoutY="411.0" prefHeight="26.0" prefWidth="256.0" promptText="VISA STATUS" />
-      <ComboBox fx:id="cmbPosition" layoutX="671.0" layoutY="71.0" prefHeight="26.0" prefWidth="256.0" promptText="POSSISION" />
       <Button fx:id="btnNewEmployee" layoutX="72.0" layoutY="495.0" mnemonicParsing="false" onMouseClicked="#btnNewEmployee_OnMouseClick" prefHeight="26.0" prefWidth="150.0" text="New Employee" />
    </children>
 </AnchorPane>

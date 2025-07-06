@@ -3,12 +3,17 @@ package controller;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import util.Companies;
 import util.DBConnection;
 
+import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,11 +41,13 @@ public class AddEmployees {
     public Button btnNewEmployee;
     public ComboBox cmbPosition;
     public AnchorPane addEmployee;
-
-
+    public TextArea txtOther;
+    public Button btnUpload;
+    public ImageView imgUpload;
 
 
     public void initialize() throws SQLException {
+        imgUpload.setVisible(false); // Hide the image view
 
         // Add Gender to the comboBox
 
@@ -112,12 +119,33 @@ public class AddEmployees {
 
 
     public void btnNewEmployee_OnMouseClick(MouseEvent mouseEvent) throws SQLException {
-        ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery("select * from employees");
+        ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT MAX(employee_id) AS last_id FROM advancedhrsystem.employees;");
         if (resultSet.next()){
-            new Alert(Alert.AlertType.INFORMATION,"The email, mobile or nic already in use",ButtonType.OK).show();
+            String empID = resultSet.getString(1);
+            int EID = Integer.parseInt(empID);
+            int newEmp = EID +1;
+            txtEmpID.setText(String.valueOf(newEmp));
+
+
             return;
         }else {
             txtEmpID.setText("1");
         }
+    }
+
+    public void btnUpload_OnMouseClick(MouseEvent mouseEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose PDF File");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+
+        // Get the current stage from the event
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        File file = fileChooser.showOpenDialog(stage);
+
+        if (file != null) {
+            System.out.println("Selected PDF: " + file.getAbsolutePath());
+            imgUpload.setVisible(true); // Show the image view
+        }
+
     }
 }

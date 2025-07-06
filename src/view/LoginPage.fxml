@@ -40,7 +40,7 @@
                         </Label>
                         <TextField fx:id="txtUserName" layoutX="527.0" layoutY="164.0" promptText="Username" />
                         <PasswordField fx:id="txtPassword" layoutX="527.0" layoutY="199.0" promptText="Password" />
-                        <Label fx:id="wrong" textFill="RED" />
+
                         <Button fx:id="btnLogin" layoutX="571.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnLogin_OnMouseClick" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #ffc900;" text="Login" />
                      </children>
                   </AnchorPane>

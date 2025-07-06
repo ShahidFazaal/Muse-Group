@@ -13,6 +13,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
@@ -33,6 +34,8 @@ public class WelcomeScreen {
     public Label lblTime;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
 
+
+    public HBox welcomeScreen;
 
 
     public void initialize() {
@@ -91,9 +94,8 @@ public class WelcomeScreen {
     }
 
     public void onMouseClick(MouseEvent mouseEvent) {
-        Platform.exit();
-    }
 
+    }
     public void navigateToUserCredential(MouseEvent mouseEvent) throws IOException {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(this.getClass().getResource("/view/LoginPage.fxml"));
@@ -111,5 +113,6 @@ public class WelcomeScreen {
         Image icon = new Image(getClass().getResourceAsStream("/resource/logo.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.show();
+        welcomeScreen.getScene().getWindow().hide();
     }
 }
